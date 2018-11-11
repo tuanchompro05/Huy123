@@ -1,0 +1,31 @@
+﻿@using WebSiteBanSach.Models;
+@model  List<Sach>
+<link href="~/Content/TrangChuCss.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "SachTheoChuDe";
+    Layout = "~/Views/Lay_out/NguoiDungLayout.cshtml";
+}
+
+@if (Model.Count == 0)
+{
+    <h1>Không có cuốn sách nào</h1>
+}
+    <div id="divBody">
+
+        @{int i = 0; }
+        @foreach (var item in Model)
+        {
+            i++;
+            <div id="SanPham">
+                <div id="AnhBia"><img src="@Url.Content("~/HinhAnhSP/"+item.AnhBia)" width="100" height="150" /></div>
+                <div id="TenSach">@item.TenSach</div>
+                <div id="DonGia">@item.GiaBan</div>
+            </div>
+            if (i % 3 == 0)
+            {
+                <div style="clear:both"></div>
+            }
+        }
+    </div>
+    <div style="clear:both"></div>

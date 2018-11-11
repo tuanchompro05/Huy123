@@ -1,0 +1,58 @@
+﻿@using WebSiteBanSach.Models;
+@model List<GioHang>
+
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Lay_out/NguoiDungLayout.cshtml";
+}
+
+<h2>GioHang</h2>
+<table id="divGioHang">
+    <tr>
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>ẢNh bìa</td>
+        <td>Đơn giá</td>
+        <td>Số lượng</td>
+        <td>Thành tiền</td>
+    </tr>
+
+    @*sử dụng vong lặp vì biến model là 1 list nên phải dùng vòng lặp để duyệt tất cả phần tử trong đó*@
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.iMaSach</td>
+        <td>@item.sTenSach</td>
+        <td><a href="@Url.Action("XemChiTiet","Sach",new { @MaSach=item.iMaSach})"><img src="@Url.Content("~/HinhAnhSP/"+item.sAnhBia)" width="50" height="50" /></a></td>
+        <td>@string.Format("{0:0,0}", item.dDonGia) VNĐ</td>
+        <td>@item.iSoLuong</td>
+        <td>@string.Format("{0:0,0}", item.dThanhTien) VNĐ</td>
+    </tr>
+    }
+    <tr>
+        <td colspan="6" style="text-align:right; color:blue">
+            @Html.ActionLink("Chỉnh sửa giỏ hàng", "SuaGioHang")
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6" style="text-align:right; color:blue">
+            @using (Html.BeginForm("DatHang", "GioHang"))
+            {
+                <input type="submit" value="Đặt hàng" />
+            }
+        </td>
+    </tr>
+</table>
+@*css cho giỏ hàng*@
+<style>
+    #divGioHang {
+        border: 1px solid #eeeeee;
+        margin-left: 10%;
+    }
+
+    #divGioHang td{
+        border: 1px solid #eeeeee;
+        padding: 10px;
+    }
+</style>

@@ -1,0 +1,91 @@
+﻿/*sử dụng độ rộng cho div toàn trang*/
+#ToanTrang{
+    position: relative;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+/*thiết kế link đăng ký đăng nhập*/
+.DangKyDangNhap{
+    float: right;
+    margin-top: -1%;
+}
+.DangKyDangNhap a:hover{
+    text-decoration:none;
+    color:green;
+}
+/*css cho Menu header*/
+#divDanhMuc{
+    height: 30px;
+}
+.navMenu{
+    float: right;
+    margin-right: 10%;
+}
+.navMenu li{
+    display: inline;
+    border-right: 1px solid rgba(0,0,0,.1);
+    padding: 20px;
+    padding-top: 19px;
+    padding-bottom: 21px;
+    /*css cho hover thay đổi màu từ từ theo từng trình duyệt*/
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+}
+
+.navMenu li:hover{
+    background-color: rgba(0,0,0,.5);
+    
+}
+.navMenu a:hover{
+    text-decoration: none;
+}
+#txtTimKiem input{
+    float: left;
+    height: 0;
+    margin-left: 5%;
+}
+/*css image button tìm kiếm*/
+#divHinhAnhTimKiem button {
+    padding: 0;
+    height: 30px;
+    float: left;
+    margin-left: 2px;
+}
+#divHinhAnhTimKiem button:hover{
+    background-color: rgba(0,0,0,.5);
+}
+#divHinhAnhTimKiem img {
+    width: 30px;
+    height: 32px;
+    background-color: #14a19a;
+}
+#divMenuLeft {
+    float: left;
+    width:400px;
+}
+
+#divLeft .activity {
+    width: 100%;
+    margin-left: 10px;
+}
+
+#slider {
+    float: right;
+    width:1050px;
+}
+#slider img{
+    width:100%;
+    height:460px;
+}
+#divLeft{
+    float:left;
+    width:30%;
+}
+#divLeft .item{
+    width:100%;
+}
+#divRight{
+    float:right;
+    width:70%;
+}
